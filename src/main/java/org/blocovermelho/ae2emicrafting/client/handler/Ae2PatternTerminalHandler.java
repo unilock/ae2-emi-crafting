@@ -12,9 +12,9 @@ import dev.emi.emi.api.stack.EmiIngredient;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Recipe;
-import net.minecraft.registry.Registries;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class Ae2PatternTerminalHandler<T extends PatternEncodingTermMenu> implements StandardRecipeHandler<T> {
-    List<Slot> CreativeInputSource = Registries.ITEM.stream().map((s) -> {
+    List<Slot> CreativeInputSource = Registry.ITEM.stream().map((s) -> {
         ItemStack is = new ItemStack(s);
         is.setCount(64);
 
